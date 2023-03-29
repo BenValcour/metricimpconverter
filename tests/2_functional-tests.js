@@ -29,9 +29,9 @@ suite('Functional Tests', function() {
             "result": "invalid number and unit"
         },
         {
-            "testtype" : "with no number AND unit ",
-            "input": "3/7.2/4kilomegagram", 
-            "result": "invalid number and unit"
+            "testtype" : "with no number",
+            "input": "mi", 
+            "result": '{"initNum":1,"initUnit":"mi","returnNum":1.60934,"returnUnit":"km","string":"1 miles converts to 1.60934 kilometers"}'
         }
     ];
 
