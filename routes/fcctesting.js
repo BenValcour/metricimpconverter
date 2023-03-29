@@ -64,7 +64,9 @@ module.exports = function (app) {
     res.json({status: 'unavailable'});
   },
   function(req, res, next){
+    console.log('process report');
     if(!runner.report) return next();
+
     res.json(testFilter(runner.report, req.query.type, req.query.n));
   },
   function(req, res){
@@ -85,6 +87,8 @@ module.exports = function (app) {
 
 function testFilter(tests, type, n) {
   let out;
+  console.log(tests);
+  console.log(type);
   switch (type) {
     case 'unit' :
       out = tests.filter(t => t.context.match('Unit Tests'));
